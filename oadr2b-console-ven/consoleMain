@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.ComponentModel;   //Remove?
+using System.Data;    //Remove?
+using System.Drawing;    //Remove?
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+using System.Text;    //Remove?
+using System.Windows.Forms;    //Remove?
 
 using oadrlib.lib.oadr2b;
 using oadrlib.lib.http;
@@ -21,18 +21,20 @@ using System.Reflection;
 
 using oadr2b_ven.ven;
 
-using oadr2b_ven.UserControls;
-using oadr2b_ven.UserControls.QueryRegistration;
-using oadr2b_ven.UserControls.OptSchedule;
-using oadr2b_ven.UserControls.Events;
-using oadr2b_ven.UserControls.Resources;
-using oadr2b_ven.UserControls.Reports;
+using oadr2b_ven.UserControls;     //Remove? or Update?
+using oadr2b_ven.UserControls.QueryRegistration;     //Remove? or Update?
+using oadr2b_ven.UserControls.OptSchedule;     //Remove? or Update?
+using oadr2b_ven.UserControls.Events;     //Remove? or Update?
+using oadr2b_ven.UserControls.Resources;     //Remove? or Update?
+using oadr2b_ven.UserControls.Reports;     //Remove? or Update?
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
 //Change frmMain to consoleMain
 // Create Console App in Main
 //
+
+//Update partial class inheritance
 
 namespace oadr2b_ven
 {
@@ -52,11 +54,11 @@ namespace oadr2b_ven
 
         public frmMain()
         {
-            InitializeComponent();
+            InitializeComponent(); // Only keep components that have to do with oadr. Remove Windowed components.
 
-            frmSplash splash = new frmSplash();
+            frmSplash splash = new frmSplash();  // No Form Remove or update
 
-            this.FormClosing += new FormClosingEventHandler(frmMain_FormClosing);
+            this.FormClosing += new FormClosingEventHandler(frmMain_FormClosing);   // Handle with console quit or connection disconnect
 
             ucEvents1.setCallbackHandler(this);
 
@@ -73,9 +75,11 @@ namespace oadr2b_ven
 
             ucReportRequests.setCallback(this);
 
+//Keep Create new ven
             VEN2b ven = new VEN2b(new HttpWebRequestWrapper(false, System.Net.SecurityProtocolType.Tls12), tbURL.TextBoxText, tbVENName.TextBoxText, 
                                   "", tbVENID.TextBoxText, new HttpSecuritySettings());
 
+// Check VEN Wrapper and paramaters. Remove Window elements.
             m_venWrapper = new VenWrapper(ven, this);
             setVENParameters();
 
