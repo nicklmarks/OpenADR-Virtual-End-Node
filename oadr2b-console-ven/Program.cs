@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace oadr2b_ven
 {
@@ -13,16 +13,18 @@ namespace oadr2b_ven
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Check
+//            Application.EnableVisualStyles();
+//            Application.SetCompatibleTextRenderingDefault(false);
 
 #if (!DEBUG)
-            frmSplash splash = new frmSplash();
+    //Remove Forms?
+//            frmSplash splash = new frmSplash();
 
-            DialogResult result = splash.ShowDialog();
+//            DialogResult result = splash.ShowDialog();
 
-            if (result != System.Windows.Forms.DialogResult.OK)
-                return;
+//            if (result != System.Windows.Forms.DialogResult.OK)
+//                return;
 #endif
 //            Application.Run(new frmMain());
 
