@@ -13,6 +13,11 @@ namespace oadr2b_ven
         [STAThread]
         static void Main()
         {
+
+
+
+
+
             //Check
 //            Application.EnableVisualStyles();
 //            Application.SetCompatibleTextRenderingDefault(false);
